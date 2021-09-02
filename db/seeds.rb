@@ -12,7 +12,7 @@ Tracker.delete_all
 
 
 10.times {
-    User.create( username: Faker::Name.unique.user)
+    User.create( username: Faker::Name.name)
 }
 
 50.times {
