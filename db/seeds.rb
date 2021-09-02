@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Author.delete_all
-Article.delete_all
+User.delete_all
+Tracker.delete_all
 
 
 10.times {
-    Author.create( name: Faker::Book.unique.author)
+    User.create( username: Faker::Book.unique.user)
 }
 
 50.times {
-    Article.create({
-        title: Faker::Book.title,
-        body: Faker::Lorem.paragraphs(number: rand(5..7)),
-        author: Author.limit(1).order("RANDOM()").first # sql random
+    Tracker.create({
+        blood_pressure: Faker::Book.title,
+        blood_glucose: Faker::Lorem.paragraphs(number: rand(5..7)),
+        user: User.limit(1).order("RANDOM()").first # sql random
     })
 }
