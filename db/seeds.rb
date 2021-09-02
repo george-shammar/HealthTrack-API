@@ -12,13 +12,13 @@ Tracker.delete_all
 
 
 10.times {
-    User.create( username: Faker::Book.unique.user)
+    User.create( username: Faker::Name.unique.user)
 }
 
 50.times {
     Tracker.create({
-        blood_pressure: Faker::Book.title,
-        blood_glucose: Faker::Lorem.paragraphs(number: rand(5..7)),
+        blood_pressure: Faker::Number.number(digits: 2),
+        blood_glucose: Faker::Number.number(digits: 2),
         user: User.limit(1).order("RANDOM()").first # sql random
     })
 }
