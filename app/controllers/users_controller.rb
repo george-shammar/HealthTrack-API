@@ -9,11 +9,6 @@ class UsersController < ApplicationController
         render json: @user
     end
 
-    # def create
-    #     @user = User.create!(user_params)
-    #     json_response(@user, :created)
-    # end
-
     def create
         @user = User.new(user_params)
     
