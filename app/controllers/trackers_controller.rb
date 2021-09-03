@@ -9,9 +9,19 @@ class TrackersController < ApplicationController
         render json: @tracker
     end
 
+    # def create
+    #     @tracker = current_user.trackers.create!(tracker_params)
+    #     json_response(@tracker, :created)
+    # end
+
     def create
-        @tracker = current_user.trackers.create!(tracker_params)
-        json_response(@tracker, :created)
+        @tracker = Tracker.new(tracker_params)
+    
+        if @tracker.save
+          render json: @tracker
+        else
+          render json: { errors: @tracker.errors }
+        end
     end
     
     def update
