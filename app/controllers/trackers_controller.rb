@@ -9,13 +9,8 @@ class TrackersController < ApplicationController
         render json: @tracker
     end
 
-    def new
-      @tracker = current_user.trackers.build
-    end
-
     def create
         @tracker = Tracker.new(tracker_params)
-        # @tracker = current_user.trackers.build(tracker_params)
 
         if @tracker.save
           render json: @tracker
@@ -36,7 +31,7 @@ class TrackersController < ApplicationController
 
     private
       def tracker_params
-        params.permit(:blood_pressure, :blood_glucose)
+        params.permit(:blood_pressure, :blood_glucose, :user_id)
       end
         def find_tracker
             @tracker = Tracker.find(params[:id])
