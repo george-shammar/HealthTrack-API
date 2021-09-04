@@ -14,8 +14,8 @@ class TrackersController < ApplicationController
     end
 
     def create
-        # @tracker = Tracker.new(tracker_params)
-        @tracker = current_user.trackers.build(tracker_params)
+        @tracker = Tracker.new(tracker_params)
+        # @tracker = current_user.trackers.build(tracker_params)
 
         if @tracker.save
           render json: @tracker
