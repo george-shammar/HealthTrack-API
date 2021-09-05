@@ -6,7 +6,7 @@ class TrackersController < ApplicationController
 
         render json: {
         data: ActiveModelSerializers::SerializableResource.new(trackers, each_serializer: TrackerSerializer),
-        message: ['Tracker fetched successfully'],
+        message: ['Trackers fetched successfully'],
         status: 200,
         type: 'Success'
       }

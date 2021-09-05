@@ -6,7 +6,7 @@ class UsersController < ApplicationController
       
       render json: {
         data: ActiveModelSerializers::SerializableResource.new(users, each_serializer: UserSerializer),
-        message: ['User fetched successfully'],
+        message: ['Users fetched successfully'],
         status: 200,
         type: 'Success'
       }
@@ -15,7 +15,15 @@ class UsersController < ApplicationController
     end
 
     def show
-        render json: @user
+        @user = User.find(params[:id])
+      
+        render json: {
+            data: ActiveModelSerializers::SerializableResource.new(users, each_serializer: UserSerializer),
+            message: ['User fetched successfully'],
+            status: 200,
+            type: 'Success'
+        }
+        # render json: @user
     end
 
     def create
