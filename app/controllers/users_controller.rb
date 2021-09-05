@@ -5,25 +5,22 @@ class UsersController < ApplicationController
         @users = User.all.includes(:trackers)
       
       render json: {
-        data: ActiveModelSerializers::SerializableResource.new(users, each_serializer: UserSerializer),
+        data: ActiveModelSerializers::SerializableResource.new(@users, each_serializer: UserSerializer),
         message: ['Users fetched successfully'],
         status: 200,
         type: 'Success'
       }
-        # @users = User.all
-        # render json: @users
     end
 
     def show
         @user = User.find(params[:id])
       
         render json: {
-            data: ActiveModelSerializers::SerializableResource.new(users, each_serializer: UserSerializer),
+            data: ActiveModelSerializers::SerializableResource.new(@user, serializer: UserSerializer),
             message: ['User fetched successfully'],
             status: 200,
             type: 'Success'
-        }
-        # render json: @user
+      }
     end
 
     def create
@@ -51,7 +48,7 @@ class UsersController < ApplicationController
         params.permit(:username)
     end
 
-    # def find_user
-    #     @user = User.find(params[:id])
-    # end
+    def find_user
+        @user = User.find(params[:id])
+    end
 end

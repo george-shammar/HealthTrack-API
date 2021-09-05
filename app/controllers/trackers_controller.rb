@@ -5,24 +5,22 @@ class TrackersController < ApplicationController
         @trackers = Tracker.all.includes(:user)
 
         render json: {
-        data: ActiveModelSerializers::SerializableResource.new(trackers, each_serializer: TrackerSerializer),
+        data: ActiveModelSerializers::SerializableResource.new(@trackers, each_serializer: TrackerSerializer),
         message: ['Trackers fetched successfully'],
         status: 200,
         type: 'Success'
       }
-        # render json: @trackers
     end
 
     def show
       @tracker = Tracker.find(params[:id])
       
       render json: {
-        data: ActiveModelSerializers::SerializableResource.new(trackers, each_serializer: TrackerSerializer),
+        data: ActiveModelSerializers::SerializableResource.new(@tracker, serializer: TrackerSerializer),
         message: ['Tracker fetched successfully'],
         status: 200,
         type: 'Success'
       }
-        # render json: @tracker
     end
 
     def create
@@ -49,7 +47,8 @@ class TrackersController < ApplicationController
       def tracker_params
         params.permit(:blood_pressure, :blood_glucose, :user_id)
       end
-        # def find_tracker
-        #     @tracker = Tracker.find(params[:id])
-        # end
+
+      def find_tracker
+        @tracker = Tracker.find(params[:id])
+      end
 end
