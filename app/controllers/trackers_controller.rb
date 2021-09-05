@@ -1,7 +1,7 @@
 class TrackersController < ApplicationController
     before_action :find_tracker, only: [:show, :update, :destroy]
     def index
-        @trackers = Tracker.all
+        @trackers = Tracker.all.includes(:user)
         render json: @trackers
     end
 
