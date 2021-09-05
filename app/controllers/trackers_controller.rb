@@ -1,8 +1,16 @@
 class TrackersController < ApplicationController
     before_action :find_tracker, only: [:show, :update, :destroy]
+    
     def index
         @trackers = Tracker.all.includes(:user)
-        render json: @trackers
+
+        render json: {
+        data: ActiveModelSerializers::SerializableResource.new(trackers, each_serializer: TrackerSerializer),
+        message: ['Tracker fetched successfully'],
+        status: 200,
+        type: 'Success'
+      }
+        # render json: @trackers
     end
 
     def show
