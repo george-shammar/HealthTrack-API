@@ -1,8 +1,17 @@
 class UsersController < ApplicationController
     before_action :find_user, only: [:show, :update, :destroy]
+
     def index
-        @users = User.all
-        render json: @users
+        @users = User.all.includes(:trackers)
+      
+      render json: {
+        data: ActiveModelSerializers::SerializableResource.new(users, each_serializer: UserSerializer),
+        message: ['User fetched successfully'],
+        status: 200,
+        type: 'Success'
+      }
+        # @users = User.all
+        # render json: @users
     end
 
     def show
