@@ -1,6 +1,6 @@
 class TrackersController < ApplicationController
     before_action :find_tracker, only: [:show, :update, :destroy]
-    
+
     def index
         @trackers = Tracker.all.includes(:user)
 
@@ -14,7 +14,15 @@ class TrackersController < ApplicationController
     end
 
     def show
-        render json: @tracker
+      @tracker = Tracker.find(params[:id])
+      
+      render json: {
+        data: ActiveModelSerializers::SerializableResource.new(trackers, each_serializer: TrackerSerializer),
+        message: ['Tracker fetched successfully'],
+        status: 200,
+        type: 'Success'
+      }
+        # render json: @tracker
     end
 
     def create
@@ -41,7 +49,7 @@ class TrackersController < ApplicationController
       def tracker_params
         params.permit(:blood_pressure, :blood_glucose, :user_id)
       end
-        def find_tracker
-            @tracker = Tracker.find(params[:id])
-        end
+        # def find_tracker
+        #     @tracker = Tracker.find(params[:id])
+        # end
 end
