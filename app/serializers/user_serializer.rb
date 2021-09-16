@@ -6,7 +6,7 @@ class UserSerializer < ActiveModel::Serializer
       {
         id: tracker.id,
         blood_pressure: tracker.blood_pressure,
-        blood_glucose: tracker.blood_glucose,
+        blood_glucose: tracker.blood_glucose
       }
     end
   end

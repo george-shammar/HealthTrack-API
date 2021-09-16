@@ -1,5 +1,5 @@
 class TrackersController < ApplicationController
-  before_action :find_tracker, only: [:show, :update, :destroy]
+  before_action :find_tracker, only: %i[show update destroy]
 
   def index
     @trackers = Tracker.all.order(created_at: :desc).includes(:user)
