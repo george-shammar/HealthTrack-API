@@ -14,4 +14,4 @@ This is simple API developed with ruby on rails. It provides back end points to 
 - Active model serializer
 
 ### Base url
- The base url to the API is 
+ The base url to the API is 'https://fierce-garden-46227.herokuapp.com/api'
