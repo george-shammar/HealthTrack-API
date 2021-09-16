@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many :trackers
+  has_many :trackers
 end
