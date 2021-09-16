@@ -15,3 +15,13 @@ This is simple API developed with ruby on rails. It provides back end points to 
 
 ### Base url
  The base url to the API is 'https://fierce-garden-46227.herokuapp.com/api'
+
+ ## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+- Ruby: 3.0.0
+- Rails: 6.1.3
+- PostgreSQL. Versions 9.3 and up are supported
