@@ -1,24 +1,4 @@
 # README
+## Health Track
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is simple API developed with ruby on rails. It provides back end points to a front end application that allow users to tack their health daily, espcially, their blood pressure and blood glucose. THe back end uses a postgresql database to store users and health parameters (blood pressure and blood glucose).
