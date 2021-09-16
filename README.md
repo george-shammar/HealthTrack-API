@@ -25,3 +25,37 @@ To get a local copy up and running follow these simple example steps.
 - Ruby: 3.0.0
 - Rails: 6.1.3
 - PostgreSQL. Versions 9.3 and up are supported
+
+### Set Up
+
+- Go to the "Code" section of this repository and press the green button that says "Code". Copy the URL or the SSH key.
+- Go to the terminal and enter:
+```
+git clone URL/SSH key
+```
+- If you don't have git, you can download this project and unzip it.
+- Change directory into the folder the application is saved.
+- To install the gems, run:
+```
+bundle install
+```
+- Install yarn (you need to have npm installed) by running:
+
+```
+npm install --global yarn
+```
+
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
