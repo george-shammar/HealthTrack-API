@@ -59,3 +59,15 @@ Start server with:
 ```
 
 Open `http://localhost:3000/` in your browser.
+
+
+### Run tests
+
+```
+    rpsec --format documentation
+```
+
+
+### Deployment
+
+- Deployed on Heroku
