@@ -2,7 +2,7 @@ class TrackersController < ApplicationController
     before_action :find_tracker, only: [:show, :update, :destroy]
 
     def index
-        @trackers = Tracker.all.includes(:user)
+        @trackers = Tracker.all.order(created_at: :desc).includes(:user)
 
         render json: {
         data: ActiveModelSerializers::SerializableResource.new(@trackers, each_serializer: TrackerSerializer),
