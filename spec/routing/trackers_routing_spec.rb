@@ -6,6 +6,10 @@ RSpec.describe TrackersController, type: :routing do
             expect(get: 'api/trackers').to route_to('trackers#index')
         end
 
+        it 'does not routes to #create' do
+            expect(get: 'api/trackers').not_to route_to('trackers#create')
+        end
+
         it 'routes to #show' do
             expect(get: 'api/trackers/1').to route_to('trackers#show', id: '1')
         end
