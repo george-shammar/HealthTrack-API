@@ -9,5 +9,9 @@ RSpec.describe UsersController, type: :routing do
         it 'routes to #show' do
             expect(get: 'api/users/1').to route_to('users#show', id: '1')
         end
+
+        it 'routes to #create' do
+            expect(post: 'api/users').to route_to('users#create')
+        end
     end
 end
