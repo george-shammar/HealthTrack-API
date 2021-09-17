@@ -17,5 +17,9 @@ RSpec.describe TrackersController, type: :routing do
         it 'routes to #update' do
             expect(put: 'api/trackers/1').to route_to('trackers#update', id: '1')
         end
+
+        it 'routes to #destroy' do
+            expect(delete: 'api/trackers/1').to route_to('trackers#destroy', id: '1')
+        end
     end
 end
