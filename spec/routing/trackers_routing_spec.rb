@@ -13,5 +13,9 @@ RSpec.describe TrackersController, type: :routing do
         it 'routes to #create' do
             expect(post: 'api/trackers').to route_to('trackers#create')
         end
+
+        it 'routes to #update' do
+            expect(put: 'api/trackers/1').to route_to('trackers#update', id: '1')
+        end
     end
 end
