@@ -11,11 +11,11 @@ User.delete_all
 Tracker.delete_all
 
 
-10.times {
+3.times {
     User.create( username: Faker::Name.name)
 }
 
-50.times {
+5.times {
     Tracker.create({
         blood_pressure: Faker::Number.number(digits: 2),
         blood_glucose: Faker::Number.number(digits: 2),
