@@ -1,24 +1,98 @@
 # README
+## Health Track
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is simple API developed with ruby on rails. It provides back end points to a front end application that allow users to tack their health daily, espcially, their blood pressure and blood glucose. THe back end uses a postgresql database to store users data and health parameters (blood pressure and blood glucose).
 
-Things you may want to cover:
+### Tools
+- Ruby
+- Ruby on Rails
+- Rspec
+- Rubocop
+- Heroku
+- rack-corse
+- Postgresql
+- Active model serializer
 
-* Ruby version
+### Base url
+ The base url to the API is 'https://fierce-garden-46227.herokuapp.com/api'
 
-* System dependencies
+ ## Getting Started
 
-* Configuration
+To get a local copy up and running follow these simple example steps.
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+- Ruby: 3.0.0
+- Rails: 6.1.3
+- PostgreSQL. Versions 9.3 and up are supported
 
-* How to run the test suite
+### Set Up
 
-* Services (job queues, cache servers, search engines, etc.)
+- Go to the "Code" section of this repository and press the green button that says "Code". Copy the URL or the SSH key.
+- Go to the terminal and enter:
+```
+git clone URL/SSH key
+```
+- If you don't have git, you can download this project and unzip it.
+- Change directory into the folder the application is saved.
+- To install the gems, run:
+```
+bundle install
+```
+- Install yarn (you need to have npm installed) by running:
 
-* Deployment instructions
+```
+npm install --global yarn
+```
 
-* ...
+Setup database with:
+
+```
+   rails db:create
+   rails db:migrate
+```
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+
+### Run tests
+
+```
+    rpsec --format documentation
+```
+
+
+### Deployment
+
+- Deployed on Heroku
+
+
+## Author
+
+
+👤 **George Gbenle**
+
+- GitHub: [george-shammar](https://github.com/george-shammar)
+- Twitter: [@GeorgeShammar](https://twitter.com/GeorgeShammar)
+- LinkedIn: [George Gbenle](https://www.linkedin.com/in/georgegbenle/)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](LICENSE) licensed.

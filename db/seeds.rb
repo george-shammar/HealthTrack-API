@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+User.delete_all
+Tracker.delete_all
+
+
+3.times {
+    User.create( username: Faker::Name.name)
+}
+
+5.times {
+    Tracker.create({
+        blood_pressure: Faker::Number.number(digits: 2),
+        blood_glucose: Faker::Number.number(digits: 2),
+        user: User.limit(1).order("RANDOM()").first # sql random
+    })
+}
