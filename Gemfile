@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'active_model_serializers', '~> 0.10.12'
@@ -12,7 +12,7 @@ gem 'rails', '~> 6.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
-
+gem 'nokogiri', '~> 1.16', '>= 1.16.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
